@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            /* animation-play-state: running; */
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        .top { animation-name: box-ani; }
+        @keyframes box-ani {
+            0% {
+                background-color: blue;
+                left: 0px;
+            }
+            50% {
+                background-color: orange;
+                left: 100px;
+            }
+            100% {
+                background-color: pink;
+                left: 200px;
+            }
+        }
+
+        .mid { animation-name: box-ani2; }
+        @keyframes box-ani2 {
+            0% {
+                background-color: blue;
+                top: 0px;
+            }
+            50% {
+                background-color: orange;
+                top: 100px;
+            }
+            100% {
+                background-color: pink;
+                top: 200px;
+            }
+        }
+
+        .bot { animation-name: box-ani3; }
+        @keyframes box-ani3 {
+            0% {
+                background-color: blue;
+                top: 0px;
+                left: 0px;
+            }
+            50% {
+                background-color: orange;
+                top: 100px;
+                left: 100px;
+            }
+            100% {
+                background-color: pink;
+                top: 200px;
+                left: 200px;
+            }
+        }
+
+        .container {
+            width: 100px;
+            height: 50px;
+            background-color: lightgray;
+        }
+
+        .container:hover ~ .box {
+            animation-play-state: paused;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">멈추기</div>
+    <div class="box top"></div>
+    <div class="box mid"></div>
+    <div class="box bot"></div>
+</body>
+</html>
