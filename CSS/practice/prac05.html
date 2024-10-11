@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            /* width: 700px; */
+            /* height: 700px; */
+            /* border: 1px solid black; */
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 700px;
+            height: 500px;
+            border: 1px solid black;
+            display: flex;
+            flex-flow: row wrap;
+            color: white;
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        .header {
+            width: 700px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu {
+            width: 200px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mypage {
+            width: 100px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 700px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            width: 70%;
+            height: 100%;
+            background-color: orange;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .black {
+            margin: 30px;
+            width: 100px;
+            height: 50px;
+            background-color: black;
+
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        .black:hover {
+            transform: scale(2);
+            
+        }
+
+        .aside {
+            width: 30%;
+            height: 100%;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            width: 700px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                <div class="menu">메인메뉴</div>
+                <div class="mypage">마이페이지</div>
+            </div>
+            <div class="main">
+                <div class="content">
+                    <div class="black"></div>
+                    <div class="black"></div>
+                    <div class="black"></div>
+                    <div class="black"></div>
+                    <div class="black"></div>
+                    <div class="black"></div>
+                </div>
+                <div class="aside">aside</div>
+            </div>
+            <div class="footer">footer</div>
+        </div>
+    </div>
+</body>
+</html>
