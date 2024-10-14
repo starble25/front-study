@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            height: 120px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .headerWrap {
+            width: 960px;
+            height: 40px;
+            display: flex;
+            background-color: #f0f0f0;
+        }
+
+        .utilBar {
+            height: 100%;
+            width: 80%;
+            display: flex;
+        }
+
+        .util {
+            max-width: 300px; /* text크기에 맞춰서 box크기 조정 */
+            height: 100%;
+            padding: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: gray;
+            border: 1px solid #d3d3d3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .language {
+            width: 140px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+
+        .gnbWrap {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+
+            background-color: white;
+            border: 1px solid #d3d3d3;
+        }
+
+        .gnbWrap:hover { z-index: 1; }
+
+        .gnb {
+            width: 960px;
+            height: 400px;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .gnbLogo {
+            width: 210px;
+            height: 100%;
+        }
+
+        .logo1 {
+            width: 100%;
+            height: 80px;
+        }
+        .logo2 {
+            width: 100%;
+            height: 320px;
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+        .gnbBox {
+            width: 125px;
+            height: 100%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .gnbBox1 {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gnbBox2 {
+            width: 100%;
+            height: 320px;
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+
+        .main {
+            width: 100%;
+            height: 730px;
+            background-color: #1e79a3;
+        }
+
+        .visualWrap {
+            width: 100%;
+            height: 330px;
+            display: flex;
+            justify-content: center;
+        }
+        .mainVisual {
+            width: 960px;
+            height: 100%;
+            border: 1px solid gray;
+        }
+
+        .panelContainer {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .panel {
+            width: 960px;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            font-size: 15px;
+            color: white;
+            /* background-color: rgb(6, 112, 77); */
+        }
+
+        .today {
+            width: 240px;
+            height: 100%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .todayBtn {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+        .todayTime {
+            width: 100%;
+            height: 110px;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+        .todayLink {
+            width: 100%;
+            height: 240px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .todayLink2 {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            text-align: center;
+            border: 1px solid gray;
+        }
+
+        .program {
+            width: 720px;
+            height: 100%;
+        }
+        .programTitle {
+            width: 100%;
+            height: 50px;
+            padding: 15px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            border: 1px solid gray;
+        }
+        .programCont {
+            width: 100%;
+            height: 350px;
+            display: flex;
+        }
+        .programBox {
+            width: 240px;
+            height: 100%;
+            border: 1px solid gray;
+        }
+
+        .bg {
+            width: 100%;
+            height: 458px;
+            font-size: 14px;
+            color: white;
+            background-color: #1e79a3;
+        }
+        .bg * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bgTitle {
+            width: 100%;
+            height: 101px;
+            font-size: 32px;
+            font-weight: bold;
+            color: yellow;
+        }
+        .bgCont {
+            width: 100%;
+            height: 105px;
+            margin-top: 252px;
+        }
+        .bgBox {
+            width: 256px;
+            height: 100%;
+            flex-flow: row wrap;
+            text-align: center;
+        }
+        .bgLink {
+            width: 112px;
+            height: 36px;
+            border: 2px solid white;
+            font-weight: bold;
+        }
+
+        .bgBtm {
+            width: 100%;
+            height: 328px;
+            background-color: #1e79a3;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .panelContainer2 {
+            width: 968px;
+            height: 263px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+        }
+        .panel2 {
+            width: 240px;
+            height: 240px;
+            margin-top: 23px;
+            background-color: #f0f0f0;
+        }
+
+        .notice {
+            width: 100%;
+            height: 25%;
+            border: 1px solid gray;
+        }
+        .banner {
+            width: 100%;
+            height: 50%;
+            border: 1px solid gray;
+        }
+
+        .footer {
+            width: 100%;
+            height: 200px;
+            background-color: #104057;
+        }
+
+        .sticker {
+            width: 150px;
+            height: 50px;
+            background-color: yellow;
+            font-size: 24px;
+            font-weight: bold;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: fixed;
+            right: 40px;
+            bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="headerWrap">
+            <div class="utilBar">
+                <div class="util">롯데월드 어드벤처</div>
+                <div class="util">롯데월드 어드벤처 부산</div>
+                <div class="util">SEOUL SKY</div>
+                <div class="util">롯데워터파크</div>
+                <div class="util">롯데월드 아쿠아리움 하노이</div>
+            </div>
+            <div class="language">
+                <select>
+                    <option value="" hidden>Language</option>
+                    <option value="1">Korean</option>
+                    <option value="2">English</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="gnbWrap">
+            <div class="gnb">
+                <div class="gnbLogo">
+                    <div class="logo1"></div>
+                    <div class="logo2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">아쿠아리움 소개</div>
+                    <div class="gnbBox2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">프로그램·이벤트</div>
+                    <div class="gnbBox2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">이용안내</div>
+                    <div class="gnbBox2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">온라인예매</div>
+                    <div class="gnbBox2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">단체 안내</div>
+                    <div class="gnbBox2"></div>
+                </div>
+                <div class="gnbBox">
+                    <div class="gnbBox1">고객소리함</div>
+                    <div class="gnbBox2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="visualWrap">
+                <div class="mainVisual"></div>
+            </div>
+            <div class="panelContainer">
+                <div class="panel">
+                    <div class="today">
+                        <div class="todayBtn">아쿠아리움 365</div>
+                        <div class="todayTime">
+                            <p>아쿠아리움 운영시간</p><br>
+                            <span></span>
+                            <span style="font-size: 25px;">10:00 ~ 22:00</span>
+                        </div>
+
+                        <div class="todayLink">
+                            <div class="todayLink2">이용요금</div>
+                            <div class="todayLink2">우대정보</div>
+                            <div class="todayLink2">DIY 활동지</div>
+                            <div class="todayLink2">층별안내</div>
+                            <div class="todayLink2">단체프로그램</div>
+                            <div class="todayLink2">고객의 소리</div>
+                            <div class="todayLink2">교통·주차</div>
+                            <div class="todayLink2">편의시설</div>
+                            <div class="todayLink2">장애인<br>편의제도</div>
+                        </div>
+                    </div>
+
+                    <div class="program">
+                        <div class="programTitle">주요 프로그램</div>
+                        <div class="programCont">
+                            <div class="programBox"></div>
+                            <div class="programBox"></div>
+                            <div class="programBox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg">
+            <div class="bgTitle">AQUARIUM NOW</div>
+            <div class="bgCont">
+                <div class="bgBox">
+                    <p style="color: yellow;">아쿠아리스트가 궁금해요!</p>
+                    <span>톡톡 터지는 아쿠아리스트의<br>특별한 이야기</span>
+                    <div class="bgLink">자세히 보기</div>
+                </div>
+                <div class="bgBox">
+                    <p style="color: yellow;">바다 친구들의 수다</p>
+                    <span>재잘재잘 바다친구들의<br>알고 싶은 이야기</span>
+                    <div class="bgLink">자세히 보기</div>
+                </div>
+                <div class="bgBox">
+                    <p style="color: yellow;">반갑다 친구야</p>
+                    <span>안녕~안녕~<br>궁금한 친구들을 만나보세요!</span>
+                    <div class="bgLink">자세히 보기</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bgBtm">
+            <div class="panelContainer2">
+                <div class="panel2">
+                    <div class="notice"></div>
+                    <div class="notice"></div>
+                    <div class="notice"></div>
+                    <div class="notice"></div>
+                </div>
+                <div class="panel2"></div>
+                <div class="panel2"></div>
+                <div class="panel2">
+                    <div class="banner"></div>
+                    <div class="banner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    
+    <div class="sticker">채팅상담</div>
+</body>
+</html>

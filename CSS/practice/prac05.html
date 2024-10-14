@@ -20,6 +20,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            align-content: center;
+
+            /* 
+                width: 700px;
+                height: 500px;
+                margin: 0 auto → containter 중앙정렬
+                margin-top: 50px
+             */
         }
 
         .box {
@@ -70,8 +78,9 @@
             background-color: orange;
             display: flex;
             flex-flow: row wrap;
-            align-items: center;
-            justify-content: space-evenly;
+            justify-content: center;
+            /* align-items: center; */
+            align-content: center;
         }
 
         .black {
@@ -80,13 +89,13 @@
             height: 50px;
             background-color: black;
 
-            transition-property: all;
+            transition-property: all; /* transition-property: transform; */
             transition-duration: 0.5s;
         }
 
         .black:hover {
             transform: scale(2);
-            
+            /* scale(x, y)  scale(n)*/
         }
 
         .aside {
