@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .box {
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .yellow { background-color: yellow; }
+        .gray { background-color: gray; }
+        .purple { background-color: purple; }
+        .lightgray { background-color: lightgray; }
+        .pink { background-color: pink; }
+        .orange { background-color: orange; }
+
+        .top {
+            display: flex;
+        }
+        .topBox {
+            width: 50%;
+            height: 100px;
+        }
+
+        .mid {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: row;
+        }
+        .midBox1 {
+            width: 40%;
+            height: 100%
+        }
+        .mid2 {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .midBox2 {
+            width: 100%;
+        }
+
+        .bot {
+            height: 100px;
+            width: 100%;
+        }
+        .botBox {
+            float: left;
+            height: 100px;
+            width: 25%;
+        }
+
+        @media screen and (max-width:700px) {
+            .container { width: 100%; }
+        }
+
+        @media screen and (max-width:650px) {
+            .botBox { width: 50%; }
+        }
+
+        @media screen and (max-width:500px) {
+            .top { flex-direction: column; }
+            .topBox { width: 100%; }
+
+            .mid { flex-direction: column; }
+            .midBox1 { width: 100%; }
+            .mid2 { width: 100%; }
+            .midBox2 { width: 50%; }
+        }
+
+        @media screen and (max-width:350px) {
+            .mid2 { flex-direction: column; }
+            .midBox2 { width: 100%; }
+
+            .botBox { width: 100%; }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="top">
+            <div class="box yellow topBox"></div>
+            <div class="box gray topBox"></div>
+        </div>
+        <div class="box purple"></div>
+        <div class="mid">
+            <div class="box lightgray midBox1"></div>
+            <div class="mid2">
+                <div class="box yellow midBox2"></div>
+                <div class="box pink midBox2"></div>
+            </div>
+        </div>
+        <div class="bot">
+            <div class="box yellow botBox"></div>
+            <div class="box orange botBox"></div>
+            <div class="box yellow botBox"></div>
+            <div class="box lightgray botBox"></div>
+        </div>
+    </div>
+
+</body>
+</html>
