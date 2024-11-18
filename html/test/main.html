@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+
+            background-color: darkgreen;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome {
+            width: 80%;
+            height: 15%;
+            background-color: lightgreen;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+            color: white;
+
+            animation-name: animation;
+            animation-duration: 3s;
+        }
+
+        @keyframes animation {
+            0% {
+                background-color: rgb(144, 238, 144, 0);
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">Welcome to Webpage!</div>
+    </div>
+</body>
+</html>
