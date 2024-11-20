@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.box {
+    width:100px;
+    height:100px;
+    border: 1px solid black;
+}
+.back-red{
+    background-color: red;
+}
+.back-blue{
+    background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+<button onclick="changeColor()">배경색 바꾸기</button>
+
+<script>
+// const a = 10;    상수
+// a = 20; X
+// let b = 10;      변수
+// b = 20; O
+
+// const div_box = document.getElementsByClassName('box')[0];
+// div_box.classList.add();
+
+function changeColor() {
+    let select = prompt('1또는 2를 입력하세요. 1:빨간색 2:파란색');
+    if(select == 1) {   //빨간색
+        document.getElementsByClassName('box')[0].classList.add('back-red');
+        document.getElementsByClassName('box')[0].classList.remove('back-blue');
+        //div_box.setAttribute('class', 'box back-red');
+    } else if(select == 2) {    //파란색
+        document.getElementsByClassName('box')[0].classList.add('back-blue');
+        document.getElementsByClassName('box')[0].classList.remove('back-red');
+        //div_box.setAttribute('class', 'box back-blue');
+    } else {
+        confirm('잘못 입력했습니다');
+    }
+}
+</script>
+</body>
+</html>
