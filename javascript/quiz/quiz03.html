@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+.bg-gray {
+    background-color: gray;
+}
+.color-red {
+    color: red;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="main">
+<p id="p1">p1 텍스트</p>
+<p id="p2">p2 텍스트</p>
+</div>
+</div>
+<button onclick="changeMain()">main 배경색 gray로 변경</button>
+<button onclick="changeP1()">p1 글자색 red로 변경</button>
+<button onclick="changeP2()">"p2 텍스트"를 "p2 글자" 로 변경</button>
+
+<br>
+<button onclick="changeMain2()">"추가버튼 1</button>
+<button onclick="changeP3()">"추가버튼 2</button>
+
+<script>
+    function changeMain() {
+        // document.getElementById('main').style.backgroundcolor = 'gray';
+        // document.getElementById('main').classList.add('bg-gray');
+        const div_main = document.getElementById('main');
+        
+        if(div_main.style.backgroundColor == '') {
+            div_main.style.backgroundColor = 'gray';
+        } else {
+            div_main.style.backgroundColor = '';
+        }
+
+        // if(div_main.classList.contains('bg-gray')){};
+    }
+    function changeP1() {
+        // document.getElementById('p1').classList.add('color-red');
+        const div_p1 = document.getElementById('p1');
+        if(div_p1.style.color == '') {
+            div_p1.style.color = 'red';
+        } else {
+            div_p1.style.color = '';
+        }
+
+        // document.getElementById('p1').classList.toggle('color-red');
+    }
+    
+    let count = 0;
+    function changeP2() {
+        // document.getElementById('p2').innerHTML = 'p2 글자';
+
+        switch(count) {
+            case 0 :
+                document.querySelector('#p2').textContent = 'p2 하나';
+                count++;
+                break;
+            case 1 :
+                document.querySelector('#p2').textContent = 'p2 둘';
+                count++;
+                break;
+            case 2 :
+                document.querySelector('#p2').textContent = 'p2 셋';
+                count++;
+                break;
+            case 3 :
+                document.querySelector('#p2').textContent = 'p2 넷';
+                count++;
+                break;
+            case 4 :
+                document.querySelector('#p2').textContent = 'p2 텍스트';
+                count = 0;
+        }
+
+        /*
+        if(count == 0) {
+            document.querySelector('#p2').textContent = 'p2 하나';
+            count++;
+        } else if (count == 1) {
+            document.querySelector('#p2').textContent = 'p2 둘';
+            count++;
+        } else if (count == 2) {
+            document.querySelector('#p2').textContent = 'p2 셋';
+            count++;
+        } else if (count == 3) {
+            document.querySelector('#p2').textContent = 'p2 넷';
+            count++;
+        } else {
+            document.querySelector('#p2').textContent = 'p2 텍스트';
+            count = 0;
+        }
+        */
+    }
+
+    function changeMain2() {
+        // document.getElementById('main').classList.add('bg-white');
+        document.getElementById('main').style.backgroundColor = 'white';
+    }
+    function changeP3() {
+        document.getElementById('p1').style.color = 'black';
+    }
+
+</script>
+</body>
+</html>
